@@ -54,9 +54,10 @@ for (const draftId of drafts) {
   const draftDir = path.join(SRC_DIR, "draft", draftId);
   const draftDefFilename = path.join(draftDir, "definition.ts");
   const draftDefChecksum = await fileChecksum(draftDefFilename);
-  const draftDefRelativeFilename = path.relative(CWD, draftDefFilename).split(
-    path.sep,
-  ).join("/");
+  const draftDefRelativeFilename = path.relative(CWD, draftDefFilename).replace(
+    /\\/g,
+    "/",
+  );
 
   const rawDraftSpec = (await import(draftDefFilename))
     .default as types.ValidationSpecDefinition;
