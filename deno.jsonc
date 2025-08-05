@@ -1,7 +1,5 @@
 {
   "lint": {
-    "files": {
-      "exclude": ["dist/"]
-    }
+    "exclude": ["dist/"]
   }
 }
