@@ -9,8 +9,10 @@ JSON Schema TypeScript definitions with complete inline documentation.
 **NOTE:** This library only supports defining schemas. You will need a separate
 library for data validation.
 
-There are 3 JSON Schema drafts included in this package:
+There are 5 JSON Schema drafts included in this package:
 
+- `draft-04`
+- `draft-06`
 - `draft-07`
 - `draft-2019-09`
 - `draft-2020-12`

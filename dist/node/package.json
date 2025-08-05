@@ -16,6 +16,8 @@
   "type": "module",
   "exports": {
     ".": "./draft-2020-12.js",
+    "./draft-04": "./draft-04.js",
+    "./draft-06": "./draft-06.js",
     "./draft-07": "./draft-07.js",
     "./draft-2019-09": "./draft-2019-09.js",
     "./draft-2020-12": "./draft-2020-12.js"

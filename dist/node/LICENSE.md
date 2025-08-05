@@ -1,6 +1,6 @@
 BSD 2-Clause License
 
-Original source code is copyright (c) 2019-2022 Jeremy Rylan
+Original source code is copyright (c) 2019-2025 Jeremy Rylan
 <https://github.com/jrylan>
 
 All JSON Schema documentation and descriptions are copyright (c):
@@ -20,6 +20,14 @@ Gary Court <gary.court@gmail.com>, and SitePen (USA) <https://www.sitepen.com/>.
 2013 [draft-4] IETF Trust <https://www.ietf.org/>), Francis Galiegue
 <fgaliegue@gmail.com>, Kris Zyp <kris@sitepen.com>, Gary Court
 <gary.court@gmail.com>, and SitePen (USA) <https://www.sitepen.com/>.
+
+2013 [draft-4] IETF Trust <https://www.ietf.org/>, Austin Wright <aaa@bzfx.net>,
+Henry Andrews <henry@cloudflare.com>, Geraint Luff <luffgd@gmail.com>, and
+Cloudflare, Inc. <https://www.cloudflare.com/>.
+
+2017 [draft-6] IETF Trust <https://www.ietf.org/>, Austin Wright <aaa@bzfx.net>,
+Henry Andrews <henry@cloudflare.com>, Geraint Luff <luffgd@gmail.com>, and
+Cloudflare, Inc. <https://www.cloudflare.com/>.
 
 2018 [draft-7] IETF Trust <https://www.ietf.org/>, Austin Wright <aaa@bzfx.net>,
 Henry Andrews <henry@cloudflare.com>, Geraint Luff <luffgd@gmail.com>, and

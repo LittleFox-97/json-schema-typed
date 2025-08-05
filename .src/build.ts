@@ -1,5 +1,5 @@
-import * as fs from "std/fs/mod.ts";
-import * as path from "std/path/mod.ts";
+import * as fs from "https://deno.land/std/fs/mod.ts";
+import * as path from "https://deno.land/std/path/mod.ts";
 import type * as types from "./types.ts";
 import { expandSourcePlaceholders } from "./utils/source_code.ts";
 import { formatMarkdown } from "./utils/format_markdown.ts";
@@ -59,7 +59,7 @@ for (const draftId of drafts) {
     "/",
   );
 
-  const rawDraftSpec = (await import(draftDefFilename))
+  const rawDraftSpec = (await import(`file://${draftDefFilename}`))
     .default as types.ValidationSpecDefinition;
 
   licenseCopyrights.push({
@@ -134,7 +134,9 @@ for (const draftId of drafts) {
 
   // Write to the node directory
   const mapJson = JSON.parse(map ?? "{}") as { sources: string[] };
-  mapJson.sources = mapJson.sources.map((source) => path.basename(source));
+  if (mapJson.sources) {
+    mapJson.sources = mapJson.sources.map((source) => path.basename(source));
+  }
 
   await Deno.writeTextFile(
     path.join(NODE_DIR, `draft-${nodeDraftId}.js`),
