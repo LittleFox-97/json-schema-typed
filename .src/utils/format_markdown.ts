@@ -12,17 +12,16 @@ export const formatMarkdown = async (
   try {
     tempFilename = await Deno.makeTempFile({ suffix: ".md" });
     await Deno.writeTextFile(tempFilename, sourceCode);
-    const p = Deno.run({
-      cmd: [
-        "deno",
+    const command = new Deno.Command("deno", {
+      args: [
         "fmt",
         `--options-line-width=${lineWidth}`,
         "--quiet",
         tempFilename,
       ],
     });
-    await p.status();
-    p.close();
+    const child = command.spawn();
+    await child.status;
     return (await Deno.readTextFile(tempFilename)).trimEnd();
   } catch (err) {
     throw err;

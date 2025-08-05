@@ -5,10 +5,10 @@ import { expandSourcePlaceholders } from "./utils/source_code.ts";
 import { formatMarkdown } from "./utils/format_markdown.ts";
 import { formatDefinitionDescriptions } from "./utils/format_definition_descriptions.ts";
 import { fileChecksum } from "./utils/checksum.ts";
-import checksums from "./checksums.json" assert { type: "json" };
+import checksums from "./checksums.json" with { type: "json" };
 import { VERSION } from "./version.ts";
-import packageJson from "../dist/node/package.json" assert { type: "json" };
-
+import packageJson from "../dist/node/package.json" with { type: "json" };
+import { bundle } from "https://deno.land/x/emit@0.40.0/mod.ts";
 // -----------------------------------------------------------------------------
 
 const FORCE_REFRESH = Deno.args.includes("--force");
@@ -115,7 +115,9 @@ for (const draftId of drafts) {
       modCode,
     ].join("\n"),
   );
-  await Deno.run({ cmd: ["deno", "fmt", "--quiet", outputFilename] }).status();
+  await new Deno.Command("deno", {
+    args: ["fmt", "--quiet", outputFilename],
+  }).spawn().status;
 
   // Copy to the deno directory
   await fs.copy(
@@ -127,16 +129,10 @@ for (const draftId of drafts) {
   // -------------------------------------------------------------------------
   // Compile to JS
   // -------------------------------------------------------------------------
-  const { files } = await Deno.emit(outputFilename, {
-    bundle: "module",
-    compilerOptions: { target: "es6" },
-  });
-
-  const js = files["deno:///bundle.js"];
-  const map = files["deno:///bundle.js.map"];
+  const { code: js, map } = await bundle(outputFilename);
 
   // Write to the node directory
-  const mapJson = JSON.parse(map) as { sources: string[] };
+  const mapJson = JSON.parse(map ?? "{}") as { sources: string[] };
   mapJson.sources = mapJson.sources.map((source) => path.basename(source));
 
   await Deno.writeTextFile(
@@ -224,11 +220,11 @@ for (const readmeFilename of readmeFilenames) {
       })
       .replaceAll("{LATEST_DRAFT}", latestDraft),
   );
-  const p = Deno.run({
-    cmd: ["deno", "fmt", "--quiet", readmeFilename.output],
+  const command = new Deno.Command("deno", {
+    args: ["fmt", "--quiet", readmeFilename.output],
   });
-  await p.status();
-  p.close();
+  const process = command.spawn();
+  await process.status;
 }
 
 // -----------------------------------------------------------------------------
