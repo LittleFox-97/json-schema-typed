@@ -1,5 +1,5 @@
 import { crypto } from "std/crypto/mod.ts";
-import { iterateReader } from "std/streams/mod.ts";
+import { iterateReader } from "std/io/iterate_reader.ts";
 
 export const algorithm = "MD5" as const;
 
