@@ -1,6 +1,6 @@
 import { defineValidationSpec, desc } from "../../spec.ts";
 
-// Reflects spec commit: 41014ea723120ce70b314d72f863c6929d9f3cfd
+// Reflects spec commit: 20a3fee852db88519dcb3bb329b7a872ebad8953
 
 export default defineValidationSpec({
   $copyright: {
