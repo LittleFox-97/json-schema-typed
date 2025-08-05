@@ -1,0 +1,22 @@
+name: Deno CI Windows
+
+on: "workflow_dispatch"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: "1.28.0"
+          cache: true
+
+      - name: Run build script
+        run: |
+          deno run -A --import-map=import_map.json --unstable ./.src/build.ts --force
+        env:
+          DENO_DIR: ./deno-cache
