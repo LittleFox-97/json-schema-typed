@@ -10,7 +10,3 @@
 	path = .src/draft/2020_12/spec
 	url = git@github.com:json-schema-org/json-schema-spec.git
 	branch = 2020-12
-[submodule ".src/draft/next/spec"]
-	path = .src/draft/next/spec
-	url = git@github.com:json-schema-org/json-schema-spec.git
-	branch = draft-next
