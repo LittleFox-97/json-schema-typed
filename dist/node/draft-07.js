@@ -1,52 +1,48 @@
 /// <reference types="./draft-07.ts" />
 // @generated
-// deno-fmt-ignore-file
-// deno-lint-ignore-file
-// This code was bundled using `deno bundle` and it's not recommended to edit it manually
-
 const draft = "7";
 const $schema = "https://json-schema.org/draft-07/schema";
 var ContentEncoding;
-(function(ContentEncoding1) {
-    ContentEncoding1["7bit"] = "7bit";
-    ContentEncoding1["8bit"] = "8bit";
-    ContentEncoding1["Base64"] = "base64";
-    ContentEncoding1["Binary"] = "binary";
-    ContentEncoding1["IETFToken"] = "ietf-token";
-    ContentEncoding1["QuotedPrintable"] = "quoted-printable";
-    ContentEncoding1["XToken"] = "x-token";
+(function(ContentEncoding) {
+    ContentEncoding["7bit"] = "7bit";
+    ContentEncoding["8bit"] = "8bit";
+    ContentEncoding["Base64"] = "base64";
+    ContentEncoding["Binary"] = "binary";
+    ContentEncoding["IETFToken"] = "ietf-token";
+    ContentEncoding["QuotedPrintable"] = "quoted-printable";
+    ContentEncoding["XToken"] = "x-token";
 })(ContentEncoding || (ContentEncoding = {}));
 var Format;
-(function(Format1) {
-    Format1["Date"] = "date";
-    Format1["DateTime"] = "date-time";
-    Format1["Email"] = "email";
-    Format1["Hostname"] = "hostname";
-    Format1["IDNEmail"] = "idn-email";
-    Format1["IDNHostname"] = "idn-hostname";
-    Format1["IPv4"] = "ipv4";
-    Format1["IPv6"] = "ipv6";
-    Format1["IRI"] = "iri";
-    Format1["IRIReference"] = "iri-reference";
-    Format1["JSONPointer"] = "json-pointer";
-    Format1["JSONPointerURIFragment"] = "json-pointer-uri-fragment";
-    Format1["RegEx"] = "regex";
-    Format1["RelativeJSONPointer"] = "relative-json-pointer";
-    Format1["Time"] = "time";
-    Format1["URI"] = "uri";
-    Format1["URIReference"] = "uri-reference";
-    Format1["URITemplate"] = "uri-template";
-    Format1["UUID"] = "uuid";
+(function(Format) {
+    Format["Date"] = "date";
+    Format["DateTime"] = "date-time";
+    Format["Email"] = "email";
+    Format["Hostname"] = "hostname";
+    Format["IDNEmail"] = "idn-email";
+    Format["IDNHostname"] = "idn-hostname";
+    Format["IPv4"] = "ipv4";
+    Format["IPv6"] = "ipv6";
+    Format["IRI"] = "iri";
+    Format["IRIReference"] = "iri-reference";
+    Format["JSONPointer"] = "json-pointer";
+    Format["JSONPointerURIFragment"] = "json-pointer-uri-fragment";
+    Format["RegEx"] = "regex";
+    Format["RelativeJSONPointer"] = "relative-json-pointer";
+    Format["Time"] = "time";
+    Format["URI"] = "uri";
+    Format["URIReference"] = "uri-reference";
+    Format["URITemplate"] = "uri-template";
+    Format["UUID"] = "uuid";
 })(Format || (Format = {}));
 var TypeName;
-(function(TypeName1) {
-    TypeName1["Array"] = "array";
-    TypeName1["Boolean"] = "boolean";
-    TypeName1["Integer"] = "integer";
-    TypeName1["Null"] = "null";
-    TypeName1["Number"] = "number";
-    TypeName1["Object"] = "object";
-    TypeName1["String"] = "string";
+(function(TypeName) {
+    TypeName["Array"] = "array";
+    TypeName["Boolean"] = "boolean";
+    TypeName["Integer"] = "integer";
+    TypeName["Null"] = "null";
+    TypeName["Number"] = "number";
+    TypeName["Object"] = "object";
+    TypeName["String"] = "string";
 })(TypeName || (TypeName = {}));
 const keywords = [
     "$comment",
@@ -94,7 +90,7 @@ const keywords = [
     "title",
     "type",
     "uniqueItems",
-    "writeOnly", 
+    "writeOnly"
 ];
 export { draft as draft };
 export { $schema as $schema };

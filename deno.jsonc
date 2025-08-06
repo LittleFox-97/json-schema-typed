@@ -1,7 +1,17 @@
 {
   "lint": {
-    "files": {
-      "exclude": ["dist/"]
-    }
+    "exclude": ["dist/"]
+  },
+  "compilerOptions": {
+    "strict": true,
+    "lib": [
+      "deno.window",
+      "esnext",
+      "dom",
+      "deno.unstable"
+    ]
+  },
+  "tasks": {
+    "build": "deno run -A --import-map=import_map.json --unstable ./.src/build.ts --force"
   }
 }

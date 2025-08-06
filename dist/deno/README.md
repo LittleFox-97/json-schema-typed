@@ -9,6 +9,8 @@ library for data validation.
 
 1. Chose which JSON Schema draft you'd like to import:
 
+   - `draft_04.ts`
+   - `draft_06.ts`
    - `draft_07.ts`
    - `draft_2019_09.ts`
    - `draft_2020_12.ts`
